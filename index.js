@@ -1,8 +1,10 @@
 import { registerRootComponent } from 'expo';
-
+//import { getMessaging } from '@react-native-firebase/messaging'; // Modular import
 import App from './App';
 
-// registerRootComponent calls AppRegistry.registerComponent('main', () => App);
-// It also ensures that whether you load the app in Expo Go or in a native build,
-// the environment is set up appropriately
+// Modular background handler
+//getMessaging().setBackgroundMessageHandler(async remoteMessage => {
+ // console.log('Message handled in the background!', remoteMessage);
+//});
+
 registerRootComponent(App);

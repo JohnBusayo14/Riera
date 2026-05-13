@@ -1,0 +1,9 @@
+
+{
+  "name": "AgroMove Nigeria",
+  "description": "A logistics platform connecting Nigerian farmers with specialized drivers to move produce efficiently and securely.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera"
+  ]
+}

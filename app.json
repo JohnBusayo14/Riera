@@ -1,29 +1,79 @@
 {
   "expo": {
-    "name": "frontend",
+    "name": "AgroMove",
     "slug": "frontend",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "jsEngine": "hermes",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "notification": {
+      "icon": "./assets/ic_stat_ri.png",
+      "color": "#10b981",
+      "androidMode": "default"
+    },
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.johnbusayo.frontend",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "AgroMove uses your location to calculate delivery distances and shipping costs for your orders.",
+        "NSLocationAlwaysUsageDescription": "AgroMove needs background location to track deliveries in real-time."
+      }
     },
     "android": {
+      "package": "com.johnbusayo.frontend",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 2,
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.FOREGROUND_SERVICE_LOCATION",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.POST_NOTIFICATIONS"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "extra": {
+      "eas": {
+        "projectId": "ea664b3b-6837-454b-bebf-1b994ea42e51"
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow AgroMove to use your location to find nearby drivers and calculate delivery fees.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/ic_stat_ri.png",
+          "color": "#10b981",
+          "sounds": ["./assets/sounds/doorbell.wav"]
+        }
+      ],
+      "@react-native-community/datetimepicker",
+      "expo-image-picker"
+    
+    ],
+    "owner": "johnbusayo14"
   }
 }
